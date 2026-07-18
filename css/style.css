@@ -1,0 +1,333 @@
+/* ==========================================================
+   Kawamura Lab — サイト共通スタイル
+   配色やフォントを変えるときは :root の変数を編集する
+   ========================================================== */
+
+:root {
+  --ink: #1c2733;          /* 基本の文字色 */
+  --ink-soft: #46586a;     /* やや薄い文字色 */
+  --en: #6b7b8a;           /* 英語併記の文字色 */
+  --navy: #16324f;         /* 見出し・ヘッダー */
+  --accent: #b03a48;       /* アクセント（深い赤） */
+  --accent-soft: #f6e9ea;  /* アクセントの淡色背景 */
+  --bg: #fbfaf8;           /* ページ背景 */
+  --card: #ffffff;         /* カード背景 */
+  --line: #e3e0da;         /* 罫線 */
+  --maxw: 960px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 250, 248, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.7rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand { display: flex; align-items: baseline; gap: 0.5rem; }
+.brand a { color: var(--navy); text-decoration: none; }
+.brand .brand-ja { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.04em; }
+.brand .brand-en { font-size: 0.8rem; color: var(--en); letter-spacing: 0.08em; }
+
+.site-nav ul { display: flex; gap: 1.4rem; list-style: none; flex-wrap: wrap; }
+
+.site-nav a {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  text-decoration: none;
+  line-height: 1.3;
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a .nav-en {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--en);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.site-nav a:hover { color: var(--accent); }
+.site-nav a.active { color: var(--navy); border-bottom-color: var(--accent); font-weight: 600; }
+
+/* ---------- ヒーロー（トップページ） ---------- */
+.hero {
+  background: linear-gradient(160deg, var(--navy) 0%, #1f4468 60%, #275079 100%);
+  color: #fff;
+  padding: 5rem 1.2rem 4rem;
+  text-align: center;
+}
+
+.hero h1 { font-size: 2.4rem; letter-spacing: 0.12em; font-weight: 700; }
+.hero .hero-en {
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #b8cadb;
+  margin-top: 0.4rem;
+}
+
+.hero .ecg { margin: 1.6rem auto 1.2rem; width: 260px; opacity: 0.9; }
+
+.hero .lead-ja { font-size: 1.05rem; max-width: 40em; margin: 0 auto; }
+.hero .lead-en { font-size: 0.88rem; color: #b8cadb; max-width: 46em; margin: 0.5rem auto 0; }
+
+/* ---------- ページタイトル（下層ページ） ---------- */
+.page-title {
+  background: linear-gradient(160deg, var(--navy) 0%, #1f4468 100%);
+  color: #fff;
+  padding: 2.6rem 1.2rem;
+  text-align: center;
+}
+.page-title h1 { font-size: 1.7rem; letter-spacing: 0.1em; }
+.page-title .page-en {
+  font-size: 0.82rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #b8cadb;
+  margin-top: 0.2rem;
+}
+
+/* ---------- 共通レイアウト ---------- */
+main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.2rem 4rem; }
+
+.section { padding-top: 3.2rem; }
+
+.section-heading { margin-bottom: 1.4rem; }
+.section-heading h2 {
+  color: var(--navy);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  padding-left: 0.7rem;
+  border-left: 4px solid var(--accent);
+  line-height: 1.4;
+}
+.section-heading .heading-en {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--en);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-left: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+/* 日英併記の基本ルール: .ja のあとに .en を続ける */
+p.en, li .en, .en {
+  color: var(--en);
+  font-size: 0.9em;
+}
+p.ja + p.en { margin-top: 0.3rem; }
+p.ja { margin-top: 0.8rem; }
+
+/* ---------- カード ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.4rem 1.4rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(22, 50, 79, 0.06);
+}
+.card h3 { color: var(--navy); font-size: 1.05rem; line-height: 1.5; }
+.card .card-en {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--en);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+.card p.ja { font-size: 0.92rem; margin-top: 0.7rem; }
+.card p.en { font-size: 0.82rem; }
+
+/* ---------- News ---------- */
+.news-list { list-style: none; margin-top: 0.6rem; }
+.news-list li {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0.2rem;
+  border-bottom: 1px solid var(--line);
+}
+.news-list time { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.news-list .news-body .ja { display: block; }
+.news-list .news-body .en { display: block; font-size: 0.85em; }
+
+/* ---------- 研究テーマ ---------- */
+.topic {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.6rem 1.7rem;
+  margin-top: 1.4rem;
+}
+.topic h3 { color: var(--navy); font-size: 1.12rem; line-height: 1.5; }
+.topic .topic-en {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--en);
+  letter-spacing: 0.1em;
+  margin-top: 0.15rem;
+}
+.topic p.ja { font-size: 0.95rem; }
+.topic p.en { font-size: 0.85rem; }
+
+/* ---------- 業績リスト ---------- */
+.pub-list { list-style: none; counter-reset: pub; }
+.pub-list li {
+  position: relative;
+  padding: 1rem 0.2rem 1rem 2.4em;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pub-list li::before {
+  counter-increment: pub;
+  content: counter(pub) ".";
+  position: absolute;
+  left: 0.2em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.pub-list .authors { color: var(--ink-soft); }
+.pub-list .authors .me { font-weight: 700; color: var(--ink); }
+.pub-list .title { display: block; font-weight: 600; }
+.pub-list .journal { font-style: italic; color: var(--ink-soft); }
+.pub-list .year { color: var(--en); }
+
+.award-list { list-style: none; }
+.award-list li {
+  display: grid;
+  grid-template-columns: 6.5em 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0.2rem;
+  border-bottom: 1px solid var(--line);
+}
+.award-list time { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.award-list .ja { display: block; }
+.award-list .en { display: block; font-size: 0.85em; }
+
+/* ---------- プロフィール ---------- */
+.profile {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.8rem;
+  margin-top: 1.4rem;
+}
+.profile .avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.profile h3 { color: var(--navy); font-size: 1.25rem; }
+.profile .name-en { color: var(--en); font-size: 0.9rem; letter-spacing: 0.08em; }
+.profile .role { margin-top: 0.4rem; font-size: 0.95rem; }
+
+.def-list { margin-top: 1rem; }
+.def-list dt {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-top: 0.9rem;
+}
+.def-list dt .en { font-weight: 400; margin-left: 0.5em; font-size: 0.85em; }
+.def-list dd { font-size: 0.92rem; color: var(--ink-soft); }
+
+/* ---------- お知らせボックス ---------- */
+.notice {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  margin-top: 1.6rem;
+}
+.notice p.ja { margin-top: 0; font-size: 0.95rem; }
+
+/* ---------- ボタン ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.6rem;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.btn:hover { background: var(--accent); text-decoration: none; }
+
+/* ---------- リンクリスト ---------- */
+.link-list { list-style: none; margin-top: 0.6rem; }
+.link-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+
+/* ---------- フッター ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #b8cadb;
+  text-align: center;
+  padding: 2rem 1.2rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+.site-footer .footer-name { color: #fff; font-size: 0.95rem; margin-bottom: 0.3rem; }
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero { padding: 3.5rem 1.2rem 3rem; }
+  .header-inner { justify-content: center; }
+  .site-nav ul { gap: 1rem; justify-content: center; }
+  .news-list li, .award-list li { grid-template-columns: 1fr; gap: 0.1rem; }
+  .profile { grid-template-columns: 1fr; }
+  .profile .avatar { margin: 0 auto; }
+}
