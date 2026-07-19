@@ -8,17 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/site.js"></script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
-      <a href="index.html"><span class="brand-ja">河村研究室</span></a>
+    <a class="brand" href="index.html">
+      <span class="brand-ja">河村研究室</span>
       <span class="brand-en">Kawamura Lab</span>
-    </div>
+    </a>
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">ホーム<span class="nav-en">Home</span></a></li>
@@ -32,47 +33,57 @@
 </header>
 
 <div class="page-title">
-  <h1>研究内容</h1>
   <p class="page-en">Research</p>
+  <h1>研究内容</h1>
+  <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+    <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </div>
 
 <main>
 
   <section class="section">
-    <p class="ja">当研究室では、循環器疾患をもつ患者さんの「回復」を多角的にとらえる臨床研究に取り組んでいます。主な研究テーマは以下のとおりです。</p>
-    <p class="en">Our laboratory conducts clinical research that examines recovery in patients with cardiovascular disease from multiple perspectives. Our main research themes are as follows.</p>
+    <div class="reveal">
+      <p class="ja">当研究室では、循環器疾患をもつ患者さんの「回復」を多角的にとらえる臨床研究に取り組んでいます。主な研究テーマは以下のとおりです。</p>
+      <p class="en">Our laboratory conducts clinical research that examines recovery in patients with cardiovascular disease from multiple perspectives. Our main research themes are as follows.</p>
+    </div>
 
-    <div class="topic">
-      <h3>1. 心臓外科術後の早期リハビリテーション<span class="topic-en">Early Rehabilitation after Cardiac Surgery</span></h3>
+    <div class="topic reveal" id="t1">
+      <span class="topic-num" aria-hidden="true">01</span>
+      <h3>心臓外科術後の早期リハビリテーション<span class="topic-en">Early Rehabilitation after Cardiac Surgery</span></h3>
       <p class="ja">心臓外科手術後にどれだけ早く歩行が自立できるかは、その後の回復や予後を左右する重要な指標です。術後早期の歩行自立達成と退院後の心血管イベントとの関連や、離床を遅らせる要因（術後心房細動、術前のフレイルなど）について、多施設共同研究を通じて検討しています。</p>
       <p class="en">How quickly patients regain independent walking after cardiac surgery is a key indicator of subsequent recovery and prognosis. Through multicenter studies, we investigate the association between early achievement of walkability and post-discharge cardiovascular events, as well as factors that delay early mobilization, such as postoperative atrial fibrillation and preoperative frailty.</p>
     </div>
 
-    <div class="topic">
-      <h3>2. 心不全と心臓リハビリテーション<span class="topic-en">Heart Failure &amp; Cardiac Rehabilitation</span></h3>
+    <div class="topic reveal" id="t2">
+      <span class="topic-num" aria-hidden="true">02</span>
+      <h3>心不全と心臓リハビリテーション<span class="topic-en">Heart Failure &amp; Cardiac Rehabilitation</span></h3>
       <p class="ja">心不全患者に対する運動療法・心臓リハビリテーションの効果を明らかにし、身体機能や生活の質（QOL）、予後の改善につなげる研究を行っています。</p>
       <p class="en">We study the effects of exercise therapy and cardiac rehabilitation in patients with heart failure, aiming to improve physical function, quality of life, and prognosis.</p>
     </div>
 
-    <div class="topic">
-      <h3>3. 運動耐容能・自律神経機能の評価<span class="topic-en">Assessment of Exercise Capacity &amp; Autonomic Function</span></h3>
+    <div class="topic reveal" id="t3">
+      <span class="topic-num" aria-hidden="true">03</span>
+      <h3>運動耐容能・自律神経機能の評価<span class="topic-en">Assessment of Exercise Capacity &amp; Autonomic Function</span></h3>
       <p class="ja">心肺運動負荷試験（CPX）や近赤外分光法（NIRS）、心臓交感神経シンチグラフィ（MIBG）などを用いて、運動耐容能や自律神経機能を生理学的に評価し、リハビリテーションの効果判定や予後予測への応用を目指しています。</p>
       <p class="en">Using cardiopulmonary exercise testing (CPX), near-infrared spectroscopy (NIRS), and cardiac sympathetic nerve imaging (MIBG scintigraphy), we physiologically assess exercise capacity and autonomic function, with applications to outcome evaluation and prognostic prediction in rehabilitation.</p>
     </div>
 
-    <div class="topic">
-      <h3>4. 高齢者のフレイルと術後回復<span class="topic-en">Frailty &amp; Postoperative Recovery in Older Adults</span></h3>
+    <div class="topic reveal" id="t4">
+      <span class="topic-num" aria-hidden="true">04</span>
+      <h3>高齢者のフレイルと術後回復<span class="topic-en">Frailty &amp; Postoperative Recovery in Older Adults</span></h3>
       <p class="ja">高齢の心臓手術患者における術前フレイルが術後の歩行再獲得や身体機能低下に与える影響を検討し、周術期リハビリテーションの最適化を目指しています。</p>
       <p class="en">We examine how preoperative frailty affects the recovery of walking ability and physical function in older patients undergoing cardiac surgery, aiming to optimize perioperative rehabilitation.</p>
     </div>
 
-    <div class="topic">
-      <h3>5. 臨床疫学・データサイエンス<span class="topic-en">Clinical Epidemiology &amp; Data Science</span></h3>
+    <div class="topic reveal" id="t5">
+      <span class="topic-num" aria-hidden="true">05</span>
+      <h3>臨床疫学・データサイエンス<span class="topic-en">Clinical Epidemiology &amp; Data Science</span></h3>
       <p class="ja">多施設コホートデータや診療データを用いた疫学研究に取り組んでいます。統計解析にはRを用い、傾向スコア（IPTW）などの因果推論の手法も活用しています。</p>
       <p class="en">We conduct epidemiological research using multicenter cohort and clinical data. Statistical analyses are performed in R, incorporating causal inference methods such as propensity score weighting (IPTW).</p>
     </div>
 
-    <div class="notice">
+    <div class="notice reveal">
       <p class="ja">共同研究のご相談を歓迎します。ご興味のある方は<a href="contact.html">お問い合わせ</a>ページよりご連絡ください。</p>
       <p class="en">We welcome inquiries about collaborative research. Please see the <a href="contact.html">Contact</a> page.</p>
     </div>
@@ -82,7 +93,11 @@
 </main>
 
 <footer class="site-footer">
-  <div class="footer-name">河村研究室 / Kawamura Lab</div>
+  <svg class="f-ecg" width="140" height="20" viewBox="0 0 140 20" aria-hidden="true">
+    <polyline points="0,13 44,13 52,4 60,17 66,9 70,13 140,13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="footer-name">河村研究室</div>
+  <div class="footer-en">Kawamura Lab</div>
   <div>&copy; 2026 Kawamura Lab. All rights reserved.</div>
 </footer>
 

@@ -8,17 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/site.js"></script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
-      <a href="index.html"><span class="brand-ja">河村研究室</span></a>
+    <a class="brand" href="index.html">
+      <span class="brand-ja">河村研究室</span>
       <span class="brand-en">Kawamura Lab</span>
-    </div>
+    </a>
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">ホーム<span class="nav-en">Home</span></a></li>
@@ -32,23 +33,28 @@
 </header>
 
 <div class="page-title">
-  <h1>お問い合わせ</h1>
   <p class="page-en">Contact</p>
+  <h1>お問い合わせ</h1>
+  <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+    <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </div>
 
 <main>
 
   <section class="section">
-    <p class="ja">研究に関するご質問、共同研究のご相談、研究室見学のご希望などは、下記までご連絡ください。</p>
-    <p class="en">For questions about our research, collaboration inquiries, or lab visits, please contact us below.</p>
+    <div class="reveal">
+      <p class="ja">研究に関するご質問、共同研究のご相談、研究室見学のご希望などは、下記までご連絡ください。</p>
+      <p class="en">For questions about our research, collaboration inquiries, or lab visits, please contact us below.</p>
+    </div>
 
-    <div class="card-grid">
-      <div class="card">
+    <div class="duo reveal">
+      <div>
         <h3>メール<span class="card-en">Email</span></h3>
         <p class="ja">kawamuratomonori [at] gmail.com</p>
         <p class="en">Please replace [at] with @ when sending.（[at] を @ に置き換えて送信してください）</p>
       </div>
-      <div class="card">
+      <div>
         <h3>researchmap</h3>
         <p class="ja">researchmapのプロフィールページからもご連絡いただけます。</p>
         <p class="en">You can also reach us via the researchmap profile page.</p>
@@ -60,7 +66,11 @@
 </main>
 
 <footer class="site-footer">
-  <div class="footer-name">河村研究室 / Kawamura Lab</div>
+  <svg class="f-ecg" width="140" height="20" viewBox="0 0 140 20" aria-hidden="true">
+    <polyline points="0,13 44,13 52,4 60,17 66,9 70,13 140,13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="footer-name">河村研究室</div>
+  <div class="footer-en">Kawamura Lab</div>
   <div>&copy; 2026 Kawamura Lab. All rights reserved.</div>
 </footer>
 

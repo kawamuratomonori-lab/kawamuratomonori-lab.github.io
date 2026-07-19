@@ -8,17 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/site.js"></script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
-      <a href="index.html"><span class="brand-ja">河村研究室</span></a>
+    <a class="brand" href="index.html">
+      <span class="brand-ja">河村研究室</span>
       <span class="brand-en">Kawamura Lab</span>
-    </div>
+    </a>
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">ホーム<span class="nav-en">Home</span></a></li>
@@ -32,20 +33,25 @@
 </header>
 
 <div class="page-title">
-  <h1>メンバー</h1>
   <p class="page-en">Members</p>
+  <h1>メンバー</h1>
+  <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+    <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </div>
 
 <main>
 
   <section class="section" id="pi">
-    <div class="section-heading">
-      <h2>主宰者</h2>
-      <span class="heading-en">Principal Investigator</span>
+    <div class="sec-head reveal">
+      <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+        <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>主宰者<span class="sec-en">Principal Investigator</span></h2>
     </div>
 
-    <div class="profile">
-      <div class="avatar" aria-hidden="true">TK</div>
+    <div class="profile reveal">
+      <div class="avatar" aria-hidden="true">河</div>
       <div>
         <h3>河村 知範</h3>
         <p class="name-en">Tomonori KAWAMURA, PhD, PT</p>
@@ -74,11 +80,13 @@
   </section>
 
   <section class="section" id="recruit">
-    <div class="section-heading">
-      <h2>研究室に興味のある方へ</h2>
-      <span class="heading-en">Join Us</span>
+    <div class="sec-head reveal">
+      <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+        <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>研究室に興味のある方へ<span class="sec-en">Join Us</span></h2>
     </div>
-    <div class="notice">
+    <div class="notice reveal">
       <p class="ja">心臓リハビリテーションや循環器理学療法の研究に興味のある学生・臨床家の方、共同研究をご検討の方は、<a href="contact.html">お問い合わせ</a>ページよりお気軽にご連絡ください。</p>
       <p class="en">Students, clinicians, and researchers interested in cardiac rehabilitation and cardiovascular physical therapy are welcome to reach out via the <a href="contact.html">Contact</a> page.</p>
     </div>
@@ -87,7 +95,11 @@
 </main>
 
 <footer class="site-footer">
-  <div class="footer-name">河村研究室 / Kawamura Lab</div>
+  <svg class="f-ecg" width="140" height="20" viewBox="0 0 140 20" aria-hidden="true">
+    <polyline points="0,13 44,13 52,4 60,17 66,9 70,13 140,13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="footer-name">河村研究室</div>
+  <div class="footer-en">Kawamura Lab</div>
   <div>&copy; 2026 Kawamura Lab. All rights reserved.</div>
 </footer>
 

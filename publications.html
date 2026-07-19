@@ -8,17 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/site.js"></script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
-      <a href="index.html"><span class="brand-ja">河村研究室</span></a>
+    <a class="brand" href="index.html">
+      <span class="brand-ja">河村研究室</span>
       <span class="brand-en">Kawamura Lab</span>
-    </div>
+    </a>
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">ホーム<span class="nav-en">Home</span></a></li>
@@ -32,18 +33,23 @@
 </header>
 
 <div class="page-title">
-  <h1>業績</h1>
   <p class="page-en">Publications</p>
+  <h1>業績</h1>
+  <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+    <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </div>
 
 <main>
 
   <section class="section" id="papers-en">
-    <div class="section-heading">
-      <h2>原著論文（英文）</h2>
-      <span class="heading-en">Peer-reviewed Articles (English)</span>
+    <div class="sec-head reveal">
+      <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+        <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>原著論文（英文）<span class="sec-en">Peer-reviewed Articles — English</span></h2>
     </div>
-    <ol class="pub-list">
+    <ol class="pub-list reveal">
       <li>
         <span class="authors">Oka T, <span class="me">Kawamura T</span>, Shirasaka W.</span>
         <span class="title">Differences in acute phase pain characteristics between patients undergoing bipolar hip arthroplasty versus open reduction internal fixation for hip fracture.</span>
@@ -78,11 +84,13 @@
   </section>
 
   <section class="section" id="papers-ja">
-    <div class="section-heading">
-      <h2>原著論文（和文）</h2>
-      <span class="heading-en">Peer-reviewed Articles (Japanese)</span>
+    <div class="sec-head reveal">
+      <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+        <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>原著論文（和文）<span class="sec-en">Peer-reviewed Articles — Japanese</span></h2>
     </div>
-    <ol class="pub-list">
+    <ol class="pub-list reveal">
       <li>
         <span class="authors">西村真人, 松尾善美, 大久保裕介, 古田宏, 津本直美, 神永絢, <span class="me">河村知範</span>, ほか.</span>
         <span class="title">心臓手術前より歩行が困難な症例の特徴.</span>
@@ -102,52 +110,62 @@
   </section>
 
   <section class="section" id="awards">
-    <div class="section-heading">
-      <h2>受賞</h2>
-      <span class="heading-en">Awards</span>
+    <div class="sec-head reveal">
+      <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+        <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>受賞<span class="sec-en">Awards</span></h2>
     </div>
-    <ul class="award-list">
+    <ul class="award-list reveal">
       <li>
-        <time>2023年7月</time>
+        <time>2023.07</time>
         <div>
           <span class="ja">日本心臓リハビリテーション学会 優秀賞</span>
-          <span class="en">Excellence Award, Japanese Association of Cardiac Rehabilitation (July 2023)</span>
+          <span class="en">Excellence Award, Japanese Association of Cardiac Rehabilitation</span>
         </div>
       </li>
       <li>
-        <time>2022年3月</time>
+        <time>2022.03</time>
         <div>
           <span class="ja">日本循環器学会 奨励賞</span>
-          <span class="en">Encouragement Award, Japanese Circulation Society (March 2022)</span>
+          <span class="en">Encouragement Award, Japanese Circulation Society</span>
         </div>
       </li>
       <li>
-        <time>2019年9月</time>
+        <time>2019.09</time>
         <div>
           <span class="ja">日本心血管理学療法学会 優秀賞</span>
-          <span class="en">Excellence Award, Japanese Society of Cardiovascular Physical Therapy (September 2019)</span>
+          <span class="en">Excellence Award, Japanese Society of Cardiovascular Physical Therapy</span>
         </div>
       </li>
     </ul>
   </section>
 
   <section class="section" id="links">
-    <div class="section-heading">
-      <h2>業績データベース</h2>
-      <span class="heading-en">Databases</span>
+    <div class="sec-head reveal">
+      <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
+        <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>業績データベース<span class="sec-en">Databases</span></h2>
     </div>
-    <p class="ja">最新の業績一覧は以下のデータベースをご覧ください。</p>
-    <p class="en">For the most up-to-date publication list, please see the databases below.</p>
-    <ul class="link-list">
-      <li><a href="https://researchmap.jp/t_kawamura" target="_blank" rel="noopener">researchmap</a></li>
-      <li><a href="https://orcid.org/0000-0002-1264-2671" target="_blank" rel="noopener">ORCID (0000-0002-1264-2671)</a></li>
-    </ul>
+    <div class="reveal">
+      <p class="ja">最新の業績一覧は以下のデータベースをご覧ください。</p>
+      <p class="en">For the most up-to-date publication list, please see the databases below.</p>
+      <ul class="link-list">
+        <li><a href="https://researchmap.jp/t_kawamura" target="_blank" rel="noopener">researchmap</a></li>
+        <li><a href="https://orcid.org/0000-0002-1264-2671" target="_blank" rel="noopener">ORCID (0000-0002-1264-2671)</a></li>
+      </ul>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="footer-name">河村研究室 / Kawamura Lab</div>
+  <svg class="f-ecg" width="140" height="20" viewBox="0 0 140 20" aria-hidden="true">
+    <polyline points="0,13 44,13 52,4 60,17 66,9 70,13 140,13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="footer-name">河村研究室</div>
+  <div class="footer-en">Kawamura Lab</div>
   <div>&copy; 2026 Kawamura Lab. All rights reserved.</div>
 </footer>
 
