@@ -11,6 +11,7 @@ GitHub Pages で完全無料で運用します。ビルド不要の静的HTML/CS
 | `research.html` | 研究内容 |
 | `publications.html` | 業績（論文・受賞） |
 | `members.html` | メンバー |
+| `join.html` | 進学・共同研究をお考えの方へ |
 | `contact.html` | お問い合わせ |
 | `css/style.css` | 共通スタイル（配色は `:root` の変数で変更） |
 | `assets/favicon.svg` | ファビコン |
