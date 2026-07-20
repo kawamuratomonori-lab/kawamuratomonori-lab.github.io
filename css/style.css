@@ -179,7 +179,8 @@ html.js .reveal.on { opacity: 1; transform: none; }
   color: var(--mute);
   border-left: 1px solid var(--line);
   padding-left: 1rem;
-  height: 15rem;
+  height: auto;
+  white-space: nowrap;
 }
 
 /* 心電図ライン */
