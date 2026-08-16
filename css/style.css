@@ -427,7 +427,7 @@ p.ja { margin-top: 0.9rem; color: var(--ink-2); }
   color: var(--beni-soft);
   user-select: none;
 }
-.topic h3 { font-size: 1.22rem; max-width: 30em; }
+.topic h3 { font-size: 1.22rem; max-width: 30em; padding-right: 3.4rem; }
 .topic .topic-en {
   display: block;
   font-family: var(--latin);
