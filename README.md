@@ -33,20 +33,28 @@ GitHub Pages で完全無料で運用します。ビルド不要の静的HTML/CS
 
 修正後は Claude に「GitHubに反映して」と伝えると、コミット＆プッシュで公開サイトに反映されます（反映まで1〜2分）。
 
-## 公開手順（初回のみ）
+## 公開情報
 
-1. **GitHubアカウントを作成**（無料）
-   - https://github.com/signup をブラウザで開く
-   - メールアドレス・パスワード・ユーザー名を登録
-2. **リポジトリを作成**
-   - https://github.com/new を開く
-   - Repository name: `lab-hp`（任意の名前でOK）
-   - Public を選択して「Create repository」
-3. **Claude に「GitHubに公開して。ユーザー名は○○」と伝える**
-   - Claude がプッシュと GitHub Pages の設定手順を案内します
-4. 公開URL: `https://<ユーザー名>.github.io/lab-hp/`
+- GitHubアカウント: `kawamuratomonori-lab`
+- リポジトリ名: `kawamuratomonori-lab.github.io`
+- 公開URL: **https://kawamuratomonori-lab.github.io/**
 
-※ 独自ドメインなしなら費用は一切かかりません。
+リポジトリ名を `<ユーザー名>.github.io` にしているため、GitHub Pages は自動で有効になります
+（Settings での設定作業は不要）。費用は一切かかりません。
+
+## 公開手順（初回のみ・GitHub Desktop）
+
+1. **GitHub Desktop をインストール** — https://desktop.github.com/
+2. アプリを開き、GitHubアカウント `kawamuratomonori-lab` でサインイン
+3. メニューの **File → Add Local Repository** で、このフォルダ（`Lab_HP`）を選ぶ
+4. **Publish repository** ボタンを押す
+5. 表示されたダイアログで
+   - **Name を `kawamuratomonori-lab.github.io` に書き換える**
+     （初期値はフォルダ名の `Lab_HP` になっているので必ず変更する）
+   - **「Keep this code private」のチェックを外す**（無料公開に必要）
+6. **Publish repository** を押す → 1〜2分で上記URLに公開される
+
+以降の更新は Claude に「GitHubに反映して」と伝えるだけで反映されます。
 
 ## 業績ページの自動同期
 
