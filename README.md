@@ -16,6 +16,7 @@ GitHub Pages で完全無料で運用します。ビルド不要の静的HTML/CS
 | `private.html` | 関係者用ページ（パスワード保護） |
 | `css/style.css` | 共通スタイル（配色・書体は `:root` の変数で変更） |
 | `js/site.js` | アニメーション（表示・リップル・上部へ戻るボタン） |
+| `js/publications.js` | 業績ページを researchmap と同期する処理 |
 | `js/private.js` | 関係者用ページの解錠処理 |
 | `js/private-data.js` | 関係者用ページの本文（暗号化済み・自動生成） |
 | `private/content.html` | 関係者用ページの本文（平文・**GitHubには公開されない**） |
@@ -46,6 +47,23 @@ GitHub Pages で完全無料で運用します。ビルド不要の静的HTML/CS
 4. 公開URL: `https://<ユーザー名>.github.io/lab-hp/`
 
 ※ 独自ドメインなしなら費用は一切かかりません。
+
+## 業績ページの自動同期
+
+`publications.html` の論文・受賞は、**researchmap の公開APIから自動で取得**しています。
+researchmap を更新すれば、このサイトの業績も自動的に新しくなります（手動更新は不要）。
+
+- 取得元: `https://api.researchmap.jp/t_kawamura/published_papers` と `.../awards`
+- 論文は `languages` を見て英文・和文に振り分け、新しい順に並べます
+- DOIがあるものは「DOI」ボタンから論文ページへ移動できます
+- 通信できなかったときは、HTMLに書かれている内容がそのまま表示されます（真っ白にはなりません）
+
+### 注意
+
+- **researchmap側で「公開」にしている業績だけ**が表示されます
+- 学会発表など他の項目も追加できます（`presentations` など。必要なら Claude に指示してください）
+- researchmap の著者欄に和名と英名の両方を続けて登録している項目があると重複表示になるため、
+  `js/publications.js` 側で自動的に取り除いています
 
 ## 関係者用ページ（パスワード保護）
 

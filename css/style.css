@@ -18,10 +18,10 @@
   --on-beni: #ffffff;
   --maxw: 1040px;
 
-  /* ---- 書体（ゴシック体） ---- */
-  --gothic: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  --body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  --latin: "Roboto", "Noto Sans JP", sans-serif;
+  /* ---- 書体（ヒラギノ角ゴシック優先。Windows等では Noto Sans JP / Roboto に自動でフォールバック） ---- */
+  --gothic: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+  --body: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+  --latin: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Roboto", "Noto Sans JP", sans-serif;
 
   /* ---- 角丸 ---- */
   --r-s: 8px;
@@ -469,6 +469,38 @@ p.ja { margin-top: 0.9rem; color: var(--ink-2); }
 .pub-list .title { display: block; font-weight: 700; margin: 0.15rem 0; }
 .pub-list .journal { color: var(--ink-2); }
 .pub-list .year { color: var(--mute); font-family: var(--latin); font-variant-numeric: tabular-nums; }
+.pub-list .doi {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.05em 0.5em;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  color: var(--mute);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background var(--d1) var(--ease), color var(--d1) var(--ease), border-color var(--d1) var(--ease);
+}
+.pub-list .doi:hover { background: var(--beni); border-color: var(--beni); color: var(--on-beni); text-decoration: none; }
+
+/* researchmapとの同期状況 */
+.sync-note {
+  margin-top: 2.2rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.8rem;
+  color: var(--mute);
+}
+.sync-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--beni);
+}
 
 /* ---- 受賞 ---- */
 .award-list { list-style: none; display: grid; gap: 0.7rem; }

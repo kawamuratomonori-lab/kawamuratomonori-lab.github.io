@@ -8,9 +8,10 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/site.js"></script>
+  <script defer src="js/publications.js"></script>
 </head>
 <body>
 
@@ -43,6 +44,8 @@
 
 <main>
 
+  <p class="sync-note" id="sync-note">researchmap と同期しています</p>
+
   <section class="section" id="papers-en">
     <div class="sec-head reveal">
       <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
@@ -50,7 +53,7 @@
       </svg>
       <h2>原著論文（英文）<span class="sec-en">Peer-reviewed Articles — English</span></h2>
     </div>
-    <ol class="pub-list stagger">
+    <ol class="pub-list stagger" id="pub-en">
       <li>
         <span class="authors">Oka T, <span class="me">Kawamura T</span>, Shirasaka W.</span>
         <span class="title">Differences in acute phase pain characteristics between patients undergoing bipolar hip arthroplasty versus open reduction internal fixation for hip fracture.</span>
@@ -91,7 +94,7 @@
       </svg>
       <h2>原著論文（和文）<span class="sec-en">Peer-reviewed Articles — Japanese</span></h2>
     </div>
-    <ol class="pub-list stagger">
+    <ol class="pub-list stagger" id="pub-ja">
       <li>
         <span class="authors">西村真人, 松尾善美, 大久保裕介, 古田宏, 津本直美, 神永絢, <span class="me">河村知範</span>, ほか.</span>
         <span class="title">心臓手術前より歩行が困難な症例の特徴.</span>
@@ -117,7 +120,7 @@
       </svg>
       <h2>受賞<span class="sec-en">Awards</span></h2>
     </div>
-    <ul class="award-list stagger">
+    <ul class="award-list stagger" id="awards-list">
       <li>
         <time>2023.07</time>
         <div>
