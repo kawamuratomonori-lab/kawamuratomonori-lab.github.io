@@ -39,8 +39,16 @@ GitHub Pages で完全無料で運用します。ビルド不要の静的HTML/CS
 - リポジトリ名: `kawamuratomonori-lab.github.io`
 - 公開URL: **https://kawamuratomonori-lab.github.io/**
 
-リポジトリ名を `<ユーザー名>.github.io` にしているため、GitHub Pages は自動で有効になります
-（Settings での設定作業は不要）。費用は一切かかりません。
+費用は一切かかりません。
+
+**GitHub Pages の有効化（初回のみ・手動）**
+
+リポジトリを作成しただけでは公開されません。次の設定が必要です。
+
+1. https://github.com/kawamuratomonori-lab/kawamuratomonori-lab.github.io/settings/pages を開く
+2. 「Build and deployment」の **Source** を **Deploy from a branch** にする
+3. **Branch** を `main` ／ フォルダを `/ (root)` にして **Save**
+4. 1〜2分待つと上記URLで表示される
 
 ## 公開手順（初回のみ・GitHub Desktop）
 
@@ -52,7 +60,8 @@ GitHub Pages で完全無料で運用します。ビルド不要の静的HTML/CS
    - **Name を `kawamuratomonori-lab.github.io` に書き換える**
      （初期値はフォルダ名の `Lab_HP` になっているので必ず変更する）
    - **「Keep this code private」のチェックを外す**（無料公開に必要）
-6. **Publish repository** を押す → 1〜2分で上記URLに公開される
+6. **Publish repository** を押す
+7. 上の「GitHub Pages の有効化」を行う（これをしないと404になる）
 
 以降の更新は Claude に「GitHubに反映して」と伝えるだけで反映されます。
 
