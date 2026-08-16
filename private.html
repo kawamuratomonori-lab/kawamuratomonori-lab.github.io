@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ | 河村研究室 Kawamura Lab</title>
-  <meta name="description" content="河村研究室へのお問い合わせ。Contact information for Kawamura Lab.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>関係者用ページ | 河村研究室 Kawamura Lab</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/site.js"></script>
+  <script src="js/private-data.js"></script>
+  <script defer src="js/private.js"></script>
 </head>
 <body>
 
@@ -27,15 +29,15 @@
         <li><a href="publications.html">業績<span class="nav-en">Publications</span></a></li>
         <li><a href="members.html">メンバー<span class="nav-en">Members</span></a></li>
         <li><a href="join.html">進学・共同研究<span class="nav-en">Join Us</span></a></li>
-        <li><a href="contact.html" class="active">お問い合わせ<span class="nav-en">Contact</span></a></li>
+        <li><a href="contact.html">お問い合わせ<span class="nav-en">Contact</span></a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <div class="page-title">
-  <p class="page-en">Contact</p>
-  <h1>お問い合わせ</h1>
+  <p class="page-en">Members Only</p>
+  <h1>関係者用ページ</h1>
   <svg class="beat" width="44" height="16" viewBox="0 0 44 16" aria-hidden="true">
     <polyline points="1,11 12,11 17,3 23,14 27,7 30,11 43,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
@@ -43,26 +45,29 @@
 
 <main>
 
-  <section class="section">
-    <div class="reveal">
-      <p class="ja">研究に関するご質問、共同研究のご相談、研究室見学のご希望などは、下記までご連絡ください。</p>
-      <p class="en">For questions about our research, collaboration inquiries, or lab visits, please contact us below.</p>
+  <div class="lock-card m-card" id="lock">
+    <div class="lock-icon">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm0 2a3 3 0 0 1 3 3v3H9V7a3 3 0 0 1 3-3zm0 11a1.8 1.8 0 0 1 1 3.3V20h-2v-1.7A1.8 1.8 0 0 1 12 15z" fill="currentColor"/>
+      </svg>
     </div>
+    <h2>パスワードを入力してください<span class="lock-en">Password Required</span></h2>
+    <p class="ja">このページは研究室の関係者向けです。</p>
+    <p class="en">This page is for lab members and collaborators.</p>
 
-    <div class="duo stagger">
-      <div>
-        <h3>メール<span class="card-en">Email</span></h3>
-        <p class="ja">kawamuratomonori [at] gmail.com</p>
-        <p class="en">Please replace [at] with @ when sending.（[at] を @ に置き換えて送信してください）</p>
+    <form id="unlock-form" autocomplete="off">
+      <div class="field">
+        <input type="password" id="pw" placeholder=" " autocomplete="current-password" spellcheck="false">
+        <label for="pw">パスワード / Password</label>
       </div>
-      <div>
-        <h3>researchmap</h3>
-        <p class="ja">researchmapのプロフィールページからもご連絡いただけます。</p>
-        <p class="en">You can also reach us via the researchmap profile page.</p>
-        <p><a href="https://researchmap.jp/t_kawamura" target="_blank" rel="noopener">researchmap.jp/t_kawamura</a></p>
-      </div>
-    </div>
-  </section>
+      <button type="submit" class="m-btn">解錠する / Unlock</button>
+    </form>
+
+    <p class="lock-err" id="err" hidden></p>
+    <p class="lock-note">パスワードをお持ちでない方は研究室までお問い合わせください。</p>
+  </div>
+
+  <div id="secret" hidden></div>
 
 </main>
 
@@ -72,7 +77,6 @@
   </svg>
   <div class="footer-name">河村研究室</div>
   <div class="footer-en">Kawamura Lab</div>
-  <a class="footer-private" href="private.html">関係者用ページ / Members Only</a>
   <div>&copy; 2026 Kawamura Lab. All rights reserved.</div>
 </footer>
 
