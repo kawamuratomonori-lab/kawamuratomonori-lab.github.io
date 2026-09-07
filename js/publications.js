@@ -92,11 +92,22 @@
     };
   }
 
-  function fetchJson(path) {
-    return fetch(BASE + path + "?limit=200", { mode: "cors" }).then(function (res) {
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      return res.json();
-    });
+  // researchmapのAPIはときどき接続が切れるため、間隔をあけて数回試す
+  function fetchJson(path, attempt) {
+    attempt = attempt || 1;
+    return fetch(BASE + path + "?limit=200", { mode: "cors" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .catch(function (err) {
+        if (attempt >= 3) throw err;
+        return new Promise(function (resolve) {
+          setTimeout(resolve, attempt * 800);
+        }).then(function () {
+          return fetchJson(path, attempt + 1);
+        });
+      });
   }
 
   /* ---------- 描画 ---------- */
@@ -177,7 +188,7 @@
       // 取得できないときはHTMLの内容をそのまま表示したままにする
       if (note) {
         note.textContent =
-          "researchmap の最新情報を取得できませんでした。以下は保存済みの一覧です。";
+          "researchmap に接続できなかったため、保存済みの一覧を表示しています。";
       }
     });
 })();
