@@ -138,5 +138,5 @@ LAB_PW='パスワード' python3 tools/encrypt.py
 - 日本語・英語併記ルール: 日本語の段落（`class="ja"`）の直後に英語の段落（`class="en"`）を置く
 - お知らせは `index.html` の `news-list` に新しいものを上に追加する
 - 業績の元データ: [researchmap](https://researchmap.jp/t_kawamura)
-- 書体は**ゴシック体**（Zen Kaku Gothic New / Noto Sans JP）、英字は Roboto
+- 書体は**ヒラギノ角ゴシック**優先（Windows等では Noto Sans JP / Roboto に自動で切り替わる）
 - アニメーションは `prefers-reduced-motion` を設定している環境では自動的に無効になる
