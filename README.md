@@ -140,3 +140,16 @@ LAB_PW='パスワード' python3 tools/encrypt.py
 - 業績の元データ: [researchmap](https://researchmap.jp/t_kawamura)
 - 書体は**ヒラギノ角ゴシック**優先（Windows等では Noto Sans JP / Roboto に自動で切り替わる）
 - アニメーションは `prefers-reduced-motion` を設定している環境では自動的に無効になる
+
+## 表示が古いままのときは
+
+GitHub Pages と各ブラウザは、いちど読み込んだファイルをしばらく保存（キャッシュ）します。
+更新したのに古い表示のままのときは、次を試してください。
+
+- **Mac / Chrome・Edge**: `Shift + Command + R`
+- **Mac / Safari**: `Option + Command + E`（キャッシュを空にする）→ `Command + R`
+- **iPhone・iPad**: 設定 → Safari → 履歴とWebサイトデータを消去
+- それでも古いままなら 10分ほど待つ（GitHub Pages 側のキャッシュが切れる）
+
+`css/style.css` と `js/*.js` の読み込みには `?v=日付` を付けており、
+見た目や動作を変えたときはこの日付も一緒に更新することで、古いファイルが使われないようにしています。
