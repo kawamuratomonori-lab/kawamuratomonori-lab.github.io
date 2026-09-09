@@ -11,7 +11,7 @@
   --surface-2: #f3efe6;    /* 一段沈んだ面 */
   --ink: #1a1f26;          /* 基本の文字 */
   --ink-2: #4c5560;        /* 二次テキスト */
-  --mute: #7b828c;         /* 英語併記・キャプション */
+  --mute: #686f78;         /* 英語併記・キャプション（背景に対し4.75:1／読みやすさの基準AAを満たす） */
   --line: rgba(26, 31, 38, 0.12);
   --beni: #c23a41;         /* アクセント（紅） */
   --beni-soft: rgba(194, 58, 65, 0.08);
@@ -43,6 +43,10 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 研究室名の「河村」と「研究室」を少しだけ離して読みやすくする。
+   文字としての空白は入れないので、コピーや検索は「河村研究室」のまま。 */
+.nm { margin-right: 0.3em; }
 
 html { scroll-behavior: smooth; color-scheme: light dark; }
 
@@ -352,7 +356,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.4rem 5rem; }
 /* 日英併記: .ja の直後に .en */
 p.en, li .en, .en { color: var(--mute); font-size: 0.9em; }
 p.ja + p.en { margin-top: 0.35rem; }
-p.ja { margin-top: 0.9rem; color: var(--ink-2); }
+p.ja { margin-top: 0.9rem; color: var(--ink-2); max-width: 40em; }
+p.en { max-width: 44em; }
 
 /* ==========================================================
    マテリアルカード
@@ -456,8 +461,8 @@ p.ja { margin-top: 0.9rem; color: var(--ink-2); }
   color: var(--mute);
   margin-top: 0.2rem;
 }
-.topic p.ja { max-width: 44em; }
-.topic p.en { max-width: 48em; font-size: 0.86rem; }
+.topic p.ja { max-width: 40em; }
+.topic p.en { max-width: 44em; font-size: 0.86rem; }
 
 /* ---- 業績リスト ---- */
 .pub-list { list-style: none; counter-reset: pub; display: grid; gap: 0.7rem; }
