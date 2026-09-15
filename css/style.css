@@ -18,10 +18,12 @@
   --on-beni: #ffffff;
   --maxw: 1040px;
 
-  /* ---- 書体（ヒラギノ角ゴシック優先。Windows等では Noto Sans JP / Roboto に自動でフォールバック） ---- */
-  --gothic: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
-  --body: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
-  --latin: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Roboto", "Noto Sans JP", sans-serif;
+  /* ---- 書体 ----
+     ヒラギノ角ゴシック（Mac）を第一候補とし、それ以外のOSでも
+     最初から入っている書体だけを使う。外部サーバーからは一切読み込まない。 */
+  --gothic: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif;
+  --body: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif;
+  --latin: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Segoe UI", "Yu Gothic Medium", "Meiryo", "Noto Sans CJK JP", sans-serif;
 
   /* ---- 角丸 ---- */
   --r-s: 8px;
@@ -804,6 +806,24 @@ p.en { max-width: 44em; }
   transition: background var(--d2) var(--ease), color var(--d2) var(--ease);
 }
 .site-footer .footer-private:hover { background: var(--beni); color: #fff; border-color: var(--beni); text-decoration: none; }
+
+.site-footer .footer-note {
+  max-width: 46em;
+  margin: 1.1rem auto 0;
+  font-size: 0.76rem;
+  line-height: 1.75;
+  /* 暗いフッター上で読める明るさ（背景に対し6.7:1） */
+  color: color-mix(in srgb, var(--paper) 62%, transparent);
+}
+
+.site-footer .footer-note .ja,
+.site-footer .footer-note .en { display: block; }
+
+.site-footer .footer-note .en {
+  margin-top: 0.15rem;
+  font-size: 0.93em;
+  color: color-mix(in srgb, var(--paper) 54%, transparent);
+}
 
 /* ==========================================================
    ダークモード
