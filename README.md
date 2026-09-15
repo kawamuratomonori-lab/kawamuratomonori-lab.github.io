@@ -141,6 +141,32 @@ LAB_PW='パスワード' python3 tools/encrypt.py
 - 書体は**ヒラギノ角ゴシック**優先（Windows等では Noto Sans JP / Roboto に自動で切り替わる）
 - アニメーションは `prefers-reduced-motion` を設定している環境では自動的に無効になる
 
+## 検索で見つけてもらうために
+
+検索エンジンに読み取ってもらうための設定は、サイト側にひととおり入れてあります。
+
+| ファイル・設定 | 役割 |
+|---|---|
+| `sitemap.xml` | 公開している6ページの一覧（`private.html` は含めない） |
+| `robots.txt` | 巡回を許可し、関係者用ページだけ除外。sitemapの場所も知らせる |
+| `<link rel="canonical">` | 各ページの正式なURLを示し、重複扱いを防ぐ |
+| 構造化データ（JSON-LD） | 研究室・所属大学・所在地・researchmap/ORCIDを機械可読な形で記述 |
+| OGP（`assets/ogp.png`） | SNSやLINEで共有されたときのカード画像。`python3 tools/make_ogp.py` で作り直せる |
+
+### ここから先は手作業が必要
+
+1. **Google Search Console に登録する** — 一番効果があります
+   - https://search.google.com/search-console にGoogleアカウントでログイン
+   - 「URLプレフィックス」に `https://kawamuratomonori-lab.github.io/` を入力
+   - 所有権の確認で「HTMLタグ」を選び、表示された `<meta name="google-site-verification" ...>` を Claude に貼り付ければ埋め込みます
+   - 確認後、「サイトマップ」に `sitemap.xml` を送信する
+
+2. **researchmap のプロフィールにこのサイトのURLを載せる**
+   researchmap は検索エンジンによく読まれているため、そこからリンクが張られると
+   このサイトも見つけてもらいやすくなります。ORCIDにも同様に登録できます。
+
+新しく公開したサイトが検索結果に出るまでには、数週間から数か月かかることがあります。
+
 ## 表示が古いままのときは
 
 GitHub Pages と各ブラウザは、いちど読み込んだファイルをしばらく保存（キャッシュ）します。

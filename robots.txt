@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private.html
+
+Sitemap: https://kawamuratomonori-lab.github.io/sitemap.xml
