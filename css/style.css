@@ -16,6 +16,11 @@
   --beni: #c23a41;         /* アクセント（紅） */
   --beni-soft: rgba(194, 58, 65, 0.08);
   --on-beni: #ffffff;
+
+  /* ---- フッター専用。--paper/--ink はダークモードで明暗が入れ替わるため、
+         フッターだけは専用の色を持たせて「暗い背景＋明るい文字」を固定する ---- */
+  --footer-bg: #1a1f26;
+  --footer-fg: #faf7f1;
   --maxw: 1040px;
 
   /* ---- 書体 ----
@@ -777,8 +782,8 @@ p.en { max-width: 44em; }
    フッター
    ========================================================== */
 .site-footer {
-  background: var(--ink);
-  color: color-mix(in srgb, var(--paper) 70%, transparent);
+  background: var(--footer-bg);
+  color: color-mix(in srgb, var(--footer-fg) 70%, transparent);
   text-align: center;
   padding: 2.6rem 1.4rem 2.2rem;
   font-family: var(--latin);
@@ -789,7 +794,7 @@ p.en { max-width: 44em; }
 .site-footer .footer-name {
   font-family: var(--gothic);
   font-weight: 700;
-  color: var(--paper);
+  color: var(--footer-fg);
   font-size: 1.05rem;
   letter-spacing: 0.06em;
 }
@@ -798,9 +803,9 @@ p.en { max-width: 44em; }
   display: inline-block;
   margin-bottom: 0.9rem;
   padding: 0.4rem 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--paper) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--footer-fg) 30%, transparent);
   border-radius: var(--r-full);
-  color: color-mix(in srgb, var(--paper) 80%, transparent);
+  color: color-mix(in srgb, var(--footer-fg) 80%, transparent);
   font-size: 0.76rem;
   text-decoration: none;
   transition: background var(--d2) var(--ease), color var(--d2) var(--ease);
@@ -812,8 +817,8 @@ p.en { max-width: 44em; }
   margin: 1.1rem auto 0;
   font-size: 0.76rem;
   line-height: 1.75;
-  /* 暗いフッター上で読める明るさ（背景に対し6.7:1） */
-  color: color-mix(in srgb, var(--paper) 62%, transparent);
+  /* 暗いフッター上で読める明るさ（明暗どちらでも6.2:1以上） */
+  color: color-mix(in srgb, var(--footer-fg) 62%, transparent);
 }
 
 .site-footer .footer-note .ja,
@@ -822,7 +827,7 @@ p.en { max-width: 44em; }
 .site-footer .footer-note .en {
   margin-top: 0.15rem;
   font-size: 0.93em;
-  color: color-mix(in srgb, var(--paper) 54%, transparent);
+  color: color-mix(in srgb, var(--footer-fg) 54%, transparent);
 }
 
 /* ==========================================================
@@ -843,8 +848,9 @@ p.en { max-width: 44em; }
     --e1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
     --e2: 0 2px 6px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.3);
     --e3: 0 8px 20px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.35);
+    --footer-bg: #0c0f13;
+    --footer-fg: #e9e4da;
   }
-  .site-footer { background: #0c0f13; }
 }
 
 /* ==========================================================
